@@ -1,0 +1,212 @@
+/******* Change Box Model ***************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 20px 10px;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+header a{
+  float: right;
+   position: absolute;
+   margin-top: -50px;
+   text-decoration: none;
+   color: black;
+}
+
+header span a{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+header div a{
+  position: relative;
+  margin-right: 20px;
+}
+
+
+nav{
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  background-color: black;
+  margin-top: 70px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 0;
+}
+
+nav li{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+#main_display #main_span h2{
+  margin-bottom: 0;
+}
+
+#main_display #main_span ul{
+  background: #f5f5f5b3;
+  max-width: 30%;
+  margin-left: 50px;
+  padding: auto;
+  color: rgba(15, 158, 158, 0.904);
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+#main_display #main_span ul li{
+  text-decoration: none;
+  display: block;
+  line-height: 30px;
+}
+
+#main_display #main_span ul #own_today{
+ background-color:aqua;
+ width: 100%;
+ padding: 10px;
+ line-height: 40px;
+}
+
+#main_display #main_span ul #own_today a{
+ margin: auto;
+ text-decoration: none;
+}
+
+section #car_header{
+  position: relative;
+  z-index: -1;
+  margin-top: -120px;
+  width: 100%;
+}
+
+section #car_header img{
+  margin: auto;
+  width: 70%;
+  margin-left: 50px;
+}
+
+
+/* Aside and boxes */
+
+#aside_container{
+  display: flex;
+  width: 100%;
+}
+
+#aside_container #upgrades, #reviews{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+
+#aside_container #reviews li{
+ line-height: 45px;
+}
+
+#aside_container #upgrades{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#aside_container #upgrades span{
+  float: right;
+  margin: 10px 20px;
+  font-size: 15px;
+  width: 35%;
+  font-size: 10px;
+  height: 100px;
+}
+
+
+#aside_container #upgrades span .upgrade_img{
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+
+#aside_container #upgrades span .upgrade_img img{
+  display: block;
+  margin: auto;
+  height: auto;
+}
+
+#aside_container #upgrades span h3{
+  text-align: center;
+  margin-left: -30px;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+#main_display #main_span ul{
+  background: #f5f5f5b3;
+  max-width: 40%;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+#main_display #main_span h2{
+  font-size: 5vw;
+  margin-bottom: 0;
+}
+
+  #aside_container{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+ }
+
+ #aside_container #upgrades, #reviews{
+  width: 100%;
+}
+
+ #aside_container #reviews{
+  margin-left: -30px;
+}
+
+#aside_container #upgrades span{
+  float: right;
+  margin: 10px 20px;
+  font-size: 15px;
+  width: 35%;
+  font-size: 10px;
+  height: 100px;
+}
+}
+
+
+/* nav li:hover {
+  background-color: #04AA6D;
+  color: black;
+}
+
+nav a.active {
+  background-color: #04AA6D;
+  color: white;
+} */
