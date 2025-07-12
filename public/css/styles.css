@@ -56,34 +56,33 @@ nav li{
   padding-top: 10px;
 }
 
-#main_display #main_span h2{
+#main_display #main_div h2{
   margin-bottom: 0;
 }
 
-#main_display #main_span ul{
+#main_display #main_div ul{
   background: #f5f5f5b3;
   max-width: 30%;
   margin-left: 50px;
-  padding: auto;
   color: rgba(15, 158, 158, 0.904);
   margin-top: 20px;
   padding-left: 20px;
 }
 
-#main_display #main_span ul li{
+#main_display #main_div ul li{
   text-decoration: none;
   display: block;
   line-height: 30px;
 }
 
-#main_display #main_span ul #own_today{
+#main_display #main_div ul #own_today{
  background-color:aqua;
  width: 100%;
  padding: 10px;
  line-height: 40px;
 }
 
-#main_display #main_span ul #own_today a{
+#main_display #main_div ul #own_today a{
  margin: auto;
  text-decoration: none;
 }
@@ -126,7 +125,7 @@ section #car_header img{
   flex-wrap: wrap;
 }
 
-#aside_container #upgrades span{
+#aside_container #upgrades div{
   float: right;
   margin: 10px 20px;
   font-size: 15px;
@@ -136,7 +135,7 @@ section #car_header img{
 }
 
 
-#aside_container #upgrades span .upgrade_img{
+#aside_container #upgrades div .upgrade_img{
   width: 100%;
   background-color: aqua;
   display: flex;
@@ -145,13 +144,13 @@ section #car_header img{
   height: 90px;
 }
 
-#aside_container #upgrades span .upgrade_img img{
+#aside_container #upgrades div .upgrade_img img{
   display: block;
   margin: auto;
   height: auto;
 }
 
-#aside_container #upgrades span h3{
+#aside_container #upgrades div h3{
   text-align: center;
   margin-left: -30px;
 }
@@ -164,14 +163,14 @@ footer{
 }
 
 @media only screen and (max-width: 600px){
-#main_display #main_span ul{
+#main_display #main_div ul{
   background: #f5f5f5b3;
   max-width: 40%;
   margin-left: 10px;
   padding-left: 10px;
 }
 
-#main_display #main_span h2{
+#main_display #main_div h2{
   font-size: 5vw;
   margin-bottom: 0;
 }
@@ -187,10 +186,10 @@ footer{
 }
 
  #aside_container #reviews{
-  margin-left: -30px;
+  margin-left: 10px;
 }
 
-#aside_container #upgrades span{
+#aside_container #upgrades div{
   float: right;
   margin: 10px 20px;
   font-size: 15px;
