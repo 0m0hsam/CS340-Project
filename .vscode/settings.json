@@ -10,7 +10,7 @@
             "server": "localhost",
             "driver": "PostgreSQL",
             "name": "cs340db",
-            "connectString": "postgresql://cs340db:W2KuhwHJO2dSLR3EYqUekwz4xx9ygqX2@dpg-d1nlcgs9c44c73efdtu0-a.oregon-postgres.render.com/cs340db_k6c1"
+            "connectString": "dpg-d1quqher433s739lubf0-a.oregon-postgres.render.com"
         }
     ]
 }
