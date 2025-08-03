@@ -13,9 +13,11 @@ const app = express()
 const static = require("./routes/static")
 const utilities = require("./utilities/")
 const baseController = require("./controllers/baseController")
-const database = require("./database/database.js")
+const database = require("./database/index.js")
 const invRouter = require("./routes/inventoryRoute")
 const invController = require("./controllers/inventoryController")
+const session = require ("express-session")
+const pool = require('./database/index.js')
 
 
 
@@ -25,6 +27,17 @@ const invController = require("./controllers/inventoryController")
 app.set("view engine","ejs")
 app.use(expressLayouts)
 app.set("layout","./layouts/layout")
+
+app.use(session({
+  store: new(require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
 
 
 

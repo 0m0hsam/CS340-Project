@@ -1,6 +1,6 @@
 // Example using a database query
 
-const database = require('../database/database.js');
+const database = require('../database/index.js');
 
 //get all vehicles classification using pool query
 exports.getClassifications = async () => {
