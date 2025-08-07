@@ -2,3 +2,6 @@
     <h1><%= title %> Vehicle</h1>
 <% } %>
 <%- grid %>
+<% if (error) { %>
+  <div class="error"><%= error %></div>
+<% } %>

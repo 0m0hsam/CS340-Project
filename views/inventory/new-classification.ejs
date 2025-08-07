@@ -1,0 +1,20 @@
+<h1>Add New Classification</h1>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>]
+ <%= messages() %>
+</ul>
+    <form action="/inv/new-classification" method="POST">
+        <div class="form-group" id="new-classification">
+             <label for="classification">Classification Name:</label>
+            <input type="text" pattern="[a-zA-Z]+" id="classification" name="classification_name" 
+             placeholder="Input must alphabetic characters only" required value="<%= locals.classification_name %>">
+            <button type="submit">Add Classification</button>
+        </div>
+    </form>
+
+

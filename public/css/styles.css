@@ -256,7 +256,100 @@ footer{
   margin-bottom: 30px;
 }
 
+
+
+/* //login form style */
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  background-color: darkcyan;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  row-gap: 30px;
+  font: 16px sans-serif;
+  height: auto;
+}
+
+form .form-group {
+  display: block;
+  margin: 0 20px 0 20px;
+}
+
+form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: darkcyan;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30%;
+  margin: auto;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: lightgray;
+}
+
+form p{
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  margin-top: -20px;
+}
+
+form p a{
+  color: white;
+  text-decoration: underline;
+}
+
+.password-group {
+  position: relative;
+}
+
+.form-group #show-password-container {
+  display: flex;
+  float: left;
+  margin-top: 40px;
+}
+#show-password-container input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: -23px;
+  width: 20px;
+  height: 20px;
+}
+#show-password-container p {
+  white-space: nowrap;
+  margin-left: -2px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+
 @media screen and (max-width: 700px){
+
+  form a, .form p{
+    font: 2.5vw sans-serif;
+  }
+
   #vehicles #vehicles_container #vehicle_image{
   width: 100%;
   justify-items: center;
@@ -281,6 +374,54 @@ footer{
 
 } 
 
+/* Validation styles */
+input:required:invalid, input:focus:invalid {
+ background-image: url(/images/invalid.png);
+ background-position: right top;
+ background-repeat: no-repeat;
+}
+ input:required:valid {
+ background-image: url(/images/valid.png);
+ background-position: right top;
+ background-repeat: no-repeat;
+ }
+
+
+ /* New classification form styles */
+ form #new-classification {
+  padding-top: 40px;
+}
+
+form #new-classification input[type="text"]{
+  margin-bottom: 20px;
+}
+
+form #new-classification input[type="text"]:focus{
+  outline: none;
+  border: 2px solid black;
+}
+form #new-classification button{
+  width: 60%;
+  margin: auto;
+}
+
+
+form #add_inventory {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin:auto;
+  width: 100%;
+  height: auto;
+  row-gap: 20px;
+}
+
+form #add_inventory .form-group {
+margin-top: 20px;
+}
+
+
+
 
 /* <-- Add this closing brace to end the previous @media block */
 
@@ -289,7 +430,7 @@ footer{
   background: #f5f5f5b3;
   max-width: 40%;
   margin-left: 10px;
-  padding-left: 10px;
+  justify-content: space-around
 }
 
 #main_display #main_div h2{
