@@ -18,9 +18,27 @@ route.post(
 // Process the login attempt
 route.post(
   "/login",
-  (req, res) => {
-    res.status(200).send('login process')
-  }
+  regValidate.loginRules(),
+  regValidate.checkLoginData,
+  utilities.handleErrors(acctController.accountLogin)
 )
+
+route.get("/",utilities.checkLogin, utilities.handleErrors(acctController.buildAccountLoggedin))
+
+//edit account
+route.get("/edit",utilities.checkLogin, utilities.handleErrors(acctController.buildEditAccount));
+route.post("/edit", 
+  regValidate.editRules(),
+  regValidate.checkEditData,
+  utilities.handleErrors(acctController.updateUserInfo))
+
+  //password update
+route.post("/edit_password", 
+  regValidate.editPasswordRules(),
+  regValidate.checkEditPassword,
+  utilities.handleErrors(acctController.updatePassword))
+
+  //logout
+  route.get("/logout", utilities.handleErrors(acctController.logout))
 
 module.exports = route;

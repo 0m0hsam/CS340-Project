@@ -385,7 +385,7 @@ input:required:invalid, input:focus:invalid {
  background-position: right top;
  background-repeat: no-repeat;
  }
-
+ 
 
  /* New classification form styles */
  form #new-classification {
@@ -420,10 +420,28 @@ form #add_inventory .form-group {
 margin-top: 20px;
 }
 
+#edit-account-form{
+  margin-bottom: 50px;
+}
 
+#update-password-form{
+  margin-top: 50px;
+}
 
+#upgrade-account{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+#upgrade-account label{
+  margin-bottom: -10px;
+}
 
-/* <-- Add this closing brace to end the previous @media block */
+#upgrade-code p{
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
 
 @media only screen and (max-width: 600px){
 #main_display #main_div{

@@ -2,8 +2,18 @@
     <h1><%= title %></h1>
     <p class="flash_message"><%- messages() %></p>
 <% } %>
+
+
 <div class="managment">
     <a href="/inv/new-classification"><h4>Add New Classification</h4></a>
     <a href="/inv/add_inventory"><h4>Add New Vehicle</h4></a>
 </div>
+
+<h2>Inventory Management</h2> 
+<%- classificationList %>
+<table id="inventoryDisplay"></table>
+<noscript>JavaScript must be enabled to use this page.</noscript>
+
+<script src="../../js/inventory.js"></script>
+
 

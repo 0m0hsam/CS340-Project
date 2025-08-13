@@ -19,6 +19,8 @@ const session = require ("express-session")
 const pool = require('./database/index.js')
 const acctRouter = require("./routes/accountRoute")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
+
 
 
 
@@ -42,12 +44,17 @@ app.use(session({
   name: 'sessionId',
 }))
 
+//cookies middleware
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
+
 //Express message middleware
 app.use(require('connect-flash')())
 app.use(function(req,res,next){
   res.locals.messages = require('express-messages')(req,res)
   next()
 })
+
 
 
 
