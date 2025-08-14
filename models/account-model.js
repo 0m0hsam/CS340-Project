@@ -1,7 +1,7 @@
 const database = require('../database/index.js');
 
 
-exports.registerAccount = async function(firstname, email, lastname, password) {
+exports.registerAccount = async function(firstname, lastname, email, password) {
   try {
     const sql = `
       INSERT INTO account (account_firstname, account_lastname, 
