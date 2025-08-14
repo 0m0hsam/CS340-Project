@@ -147,7 +147,8 @@ acctController.buildEditAccount = async function(req, res){
         account_firstname: userData.account_firstname,
         account_lastname: userData.account_lastname,
         account_email: userData.account_email,
-        account_id: userData.account_id
+        account_id: userData.account_id,
+        account_type: userData.account_type,
     })
 }
 
@@ -162,9 +163,10 @@ acctController.updateUserInfo = async function (req, res, next) {
     account_lastname,
     account_email,
     account_id,
-    account_type,
+    account_type
   } = req.body
-  let updatedAccountType = account_type;
+
+  let updatedAccountType = res.locals.accountData.account_type
   let updateCode ="" ;
   if (req.body.upgrade_code === "1010" ) {
     updatedAccountType = req.body.account_type;
@@ -180,9 +182,9 @@ acctController.updateUserInfo = async function (req, res, next) {
 
   if (updateResult && updateCode === "1010" ) {
     req.flash("notice", `${updateResult.account_firstname} your account information was updated and upgraded successfully! Please login to see changes`)
-    res.redirect("/account/login")
+    res.redirect("/account/login") 
   } else if (updateResult) {
-    req.flash("notice", `${updateResult.account_firstname} your account information was updated successfully!`)
+    req.flash("notice", `${updateResult.account_firstname} your account information was updated successfully, without an upgrade!`)
     res.redirect("/account/")
   } else {
     req.flash("notice", "Sorry, the update failed.")

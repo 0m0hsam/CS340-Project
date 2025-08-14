@@ -3,10 +3,12 @@
   <ul class="notice">
  <% errors.array().forEach(error => { %>
    <li><%= error.msg %></li>
-<%  }) }%>
+<%  }) %>
  </ul>
-<%= messages() %>
-
+<% } %>
+<% if(messages) { %>
+<h4 class="messages"><%- messages() %></h4>
+<% } %>
 
 <form action="/inv/add_inventory" method="POST">
  <div id="add_inventory">

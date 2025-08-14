@@ -83,6 +83,7 @@ app.use(static)
 // })
 
 app.get("/", utilities.handleErrors(baseController.buildHome))
+app.get("/error", utilities.handleErrors(baseController.errorView))
 
 // inventory routes
 app.use("/inv", invRouter)

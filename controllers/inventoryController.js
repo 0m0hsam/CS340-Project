@@ -140,9 +140,7 @@ invCont.createInventory = async function(req, res, next){
        inv_color,
       classification_id} = req.body
 
-      console.log(classification_id); // Output should show all fields with values
-      console.log(inv_color); // Output should show all fields with values
-
+     
       const regResult = await inventoryModel.createNewInventory(
        inv_make,
        inv_model,
@@ -158,7 +156,6 @@ invCont.createInventory = async function(req, res, next){
   
       if (regResult){
           let classificationList = await utilities.buildClassificationList()
-          console.log("Here is the errors:")
           req.flash(
               "notice",
               `You have successfully created a new inventory ${inv_make} ${inv_model} vehicle`

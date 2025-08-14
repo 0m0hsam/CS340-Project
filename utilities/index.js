@@ -49,8 +49,8 @@ Util.buildByClassificationGrid = async function(data){
   if (data.length > 0){
       grid = `<section id="vehicles"> <div id="vehicles_container">`
     data.forEach(vehicle => {
-    grid += `<div id="vehicle_image">
-            <a href="/inv/type/details/${vehicle.inv_id}"><img src="${vehicle.inv_thumbnail}">
+    grid += `<div class="vehicle_image">
+            <a href="/inv/type/details/${vehicle.inv_id}"><img src="${vehicle.inv_thumbnail}" alt="${vehicle.inv_make}">
             <hr />
             <h3 class="car_name">${vehicle.inv_make} ${vehicle.inv_model}</h3></a>
             <p class="price">$`

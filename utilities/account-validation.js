@@ -143,6 +143,20 @@ validate.checkLoginData = async (req, res, next) => {
         .isEmail()
         .normalizeEmail() // refer to validator.js docs
         .withMessage("A valid email is required."),
+
+      
+  //     //passcode validation
+  //     body("upgrade_code")
+  //       .trim()
+  //       .isInt()
+  //       .withMessage("A valid access code is required.")
+  //       .custom (async (upgrade_code) =>{
+  //         console.log("Testing account type")
+  //         if(upgrade_code != 1010){
+  //           req.flash("notice", `Incorrect access code. Please enter correct code`)
+  //           res.redirect("account/edit")
+  //         }
+  //       })
     ]
   }
 
@@ -151,7 +165,7 @@ validate.checkLoginData = async (req, res, next) => {
  * Check data and return errors or continue to registration
  * ***************************** */
 validate.checkEditData = async (req, res, next) => {
-  const { account_firstname, account_lastname, account_email } = req.body
+  const { account_firstname, account_lastname, account_email} = req.body
   let errors = []
   errors = validationResult(req)
   if (!errors.isEmpty()) {

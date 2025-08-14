@@ -10,7 +10,9 @@
  </ul>
 <% } %>
 
-<h1><%- messages() %></h1>
+<% if(messages) { %>
+<h4 class="messages"><%- messages() %></h4>
+<% } %>
 <!-- //Edit Account Information -->
 <form action="/account/edit" method="post" id="edit-account-form">
     <h2>Edit Account Information</h2>
@@ -41,7 +43,7 @@
         </select>
         <div id="upgrade-code">
             <p>Enter the access code to upgrade:</p>
-            <input type="text" name="upgrade_code" placeholder="Access Code"  required value="<%= locals.upgrade_code %>">
+            <input type="number" name="upgrade_code" placeholder="Access Code"  value="<%= locals.account_upgrade_code %>">
         </div>
     </div>
 
@@ -59,21 +61,22 @@
     <h2>Update User Password</h2>
     <div class="form-group">
         <label for="password">Password:</label>
-        <%  
-            function togglePasswordVisibility() {
-                const passwordField = document.getElementById('password');
-                const showPasswordCheckbox = document.getElementById('show-password');
-                passwordField.type = showPasswordCheckbox.checked ? 'text' : 'password';
-            }
-        %>
         <input type="password" id="password" name="account_password" minlength="12" 
         pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
 
-        <span id="show-password-container"><input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
-            <P>Show password</P></span>
+        <div id="show-password-container"><input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+            <P>Show password</P></div>
     </div>
         <input type="hidden" name="account_id"
     <% if(locals.account_id) { %> value="<%= locals.account_id %>"
     <% } %>>
     <button type="submit">Change Password</button>
 </form>
+
+<script>
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const showPasswordCheckbox = document.getElementById('show-password');
+    passwordField.type = showPasswordCheckbox.checked ? 'text' : 'password';
+}
+</script>

@@ -1,4 +1,6 @@
 <% if(title) { %>
   <h1><%= title %></h1>
 <% } %>
-<%= message %>
+<% if(messages) { %>
+<h4 class="messages"><%- messages() %></h4>
+<% } %>
